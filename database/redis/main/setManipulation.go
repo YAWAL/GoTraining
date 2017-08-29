@@ -12,7 +12,7 @@ func main() {
 
 	}
 
-s, 	err := conn.Cmd("SADD", "authos", "zaz", "bmw", "toyota").Str()
+	s, err := conn.Cmd("SADD", "authos", "zaz", "bmw", "toyota").Str()
 	if err != nil {
 
 	}
