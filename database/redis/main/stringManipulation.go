@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/bohdanlisovskyi/Golang-252-Telegram-Bot-Game/database/redis"
 	"github.com/8tomat8/SSU-Golang-252-Chat/loger"
 
+	"github.com/YAWAL/GoTraining/database/redis"
 )
 
 func main() {
