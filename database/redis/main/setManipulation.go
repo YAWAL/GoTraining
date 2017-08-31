@@ -15,7 +15,7 @@ func main() {
 
 	s, err := conn.Cmd("SADD", "authos", "zaz", "bmw", "toyota").Str()
 	if err != nil {
-
+		loger.Log.Errorf("error")
 	}
 	fmt.Println(s)
 }
