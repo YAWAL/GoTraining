@@ -2,6 +2,8 @@ package main
 
 import (
 	"github.com/YAWAL/GoTraining/database/redis"
+	"github.com/8tomat8/SSU-Golang-252-Chat/loger"
+
 )
 
 func main() {
@@ -10,6 +12,8 @@ func main() {
 	if err != nil {
 		loger.Log.Error(err)
 	}
+
+
 
 
 
