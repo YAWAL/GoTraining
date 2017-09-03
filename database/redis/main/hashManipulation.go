@@ -13,7 +13,7 @@ func main() {
 		loger.Log.Error(err)
 	}
 
-
+	conn.Cmd("")
 
 
 
