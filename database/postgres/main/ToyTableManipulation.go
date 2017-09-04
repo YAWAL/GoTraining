@@ -1,8 +1,25 @@
 package main
 
 import "github.com/YAWAL/GoTraining/database/postgres"
+import "github.com/8tomat8/SSU-Golang-252-Chat/loger"
 
-func main()  {
-	db, err : = postgres.GetPostgresConnection()
+type Toy struct {
+	id      int `gorm:"primary_key"`
+	name    string
+	isExist bool
+}
+
+func main() {
+	db, err := postgres.GetPostgresConnection()
+
+	if err != nil {
+		loger.Log.Errorf("error: ", err)
+	}
+
+	toy := Toy{2, "bear", true}
+	db.NewRecord(toy) // => returns `true` as primary key is blank
+
+	db.Create(&toy)
+
 
 }
