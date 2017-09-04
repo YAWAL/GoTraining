@@ -8,6 +8,12 @@ type User struct {
 	Age int
 }
 
+type Toy struct {
+	Id      int `gorm:"primary_key"`
+	Name    string
+	IsExist bool
+}
+
 func main() {
 	db, err := postgres.GetPostgresConnection()
 
@@ -15,7 +21,8 @@ func main() {
 		loger.Log.Errorf("error: ", err)
 	}
 
-	// Create table for model `User`
+	// Create table for model `User` and 'Toy'
 	db.CreateTable(&User{})
+	db.CreateTable(&Toy{})
 
 }

@@ -9,6 +9,12 @@ type Toy struct {
 	isExist bool
 }
 
+
+type User struct {
+	Name string `gorm:"primary_key"`
+	Age int
+}
+
 func main() {
 	db, err := postgres.GetPostgresConnection()
 
@@ -16,10 +22,12 @@ func main() {
 		loger.Log.Errorf("error: ", err)
 	}
 
-	user := User{"vasyl", 45}
+	user :=User{"eyrye", 22}
 	db.NewRecord(user) // => returns `true` as primary key is blank
-
 	db.Create(&user)
 
+	toy := Toy{"b", true}
+	db.NewRecord(toy)
+	db.Create(&toy)
 
 }
