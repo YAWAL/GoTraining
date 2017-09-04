@@ -13,7 +13,7 @@ var (
 
 func GetPostgresConnection() (db *gorm.DB, err error) {
 	once.Do(func() {
-		db, err = gorm.Open("postgres", "host=myhost user=root dbname=chat sslmode=disable password=ssugolang")
+		db, err = gorm.Open("postgres", "host=myhost user=root dbname=learndb sslmode=disable password=root")
 		if err != nil {
 			loger.Log.Errorf("Error during connection to Postgres has occurred %s", err.Error())
 		}
