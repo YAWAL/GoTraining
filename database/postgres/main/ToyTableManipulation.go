@@ -16,10 +16,10 @@ func main() {
 		loger.Log.Errorf("error: ", err)
 	}
 
-	toy := Toy{2, "bear", true}
-	db.NewRecord(toy) // => returns `true` as primary key is blank
+	user := User{"vasyl", 45}
+	db.NewRecord(user) // => returns `true` as primary key is blank
 
-	db.Create(&toy)
+	db.Create(&user)
 
 
 }
