@@ -26,7 +26,7 @@ func main() {
 	db.NewRecord(user) // => returns `true` as primary key is blank
 	db.Create(&user)
 
-	toy := Toy{"b", true}
+	toy := Toy{1,"b", true}
 	db.NewRecord(toy)
 	db.Create(&toy)
 
