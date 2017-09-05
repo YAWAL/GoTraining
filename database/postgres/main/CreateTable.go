@@ -89,7 +89,7 @@ type Resource struct {
 
 type CitycenterUpdate struct {
 	Id                  int `gorm:"primary_key;AUTO_INCREMENT"`
-	CitycenterId        int
+	CitycenterId        int `gorm:"not null;unique"`
 	NextLevel           int
 	NextPeoplemaxamount int
 	NextCitycenterkpi   int
@@ -99,7 +99,7 @@ type CitycenterUpdate struct {
 
 type IronmineUpdate struct {
 	Id                  int `gorm:"primary_key;AUTO_INCREMENT"`
-	IronmineId          int
+	IronmineId          int `gorm:"not null;unique"`
 	NextLevel           int
 	NextPeoplemaxamount int
 	NextMinekpi         int
@@ -109,7 +109,7 @@ type IronmineUpdate struct {
 
 type CrystalmineUpdate struct {
 	Id                  int `gorm:"primary_key;AUTO_INCREMENT"`
-	CrystalmineId       int
+	CrystalmineId       int `gorm:"not null;unique"`
 	NextLevel           int
 	NextPeoplemaxamount int
 	NextMinekpi         int
@@ -119,7 +119,7 @@ type CrystalmineUpdate struct {
 
 type ShipUpdate struct {
 	Id               int `gorm:"primary_key;AUTO_INCREMENT"`
-	ShipId           int
+	ShipId           int `gorm:"not null;unique"`
 	NextLevel        int
 	NextHitrate      int
 	NextLoadcapacity int
@@ -129,7 +129,7 @@ type ShipUpdate struct {
 
 type DokUpdate struct {
 	Id         int `gorm:"primary_key;AUTO_INCREMENT"`
-	DokId      int
+	DokId      int `gorm:"not null;unique"`
 	NextLevel  int
 	NextDokkpi int
 	StartTime  int
