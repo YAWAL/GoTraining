@@ -15,6 +15,8 @@ type User struct {
 	Age int
 }
 
+
+
 func main() {
 	db, err := postgres.GetPostgresConnection()
 
@@ -29,5 +31,9 @@ func main() {
 	toy := Toy{1,"b", true}
 	db.NewRecord(toy)
 	db.Create(&toy)
+
+	//planet := Planet{1,2}
+	//db.NewRecord(planet)
+	//db.Create(&planet)
 
 }
