@@ -3,8 +3,8 @@ package postgres
 import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/jinzhu/gorm"
-	"sync"
 	"github.com/8tomat8/SSU-Golang-252-Chat/loger"
+	"sync"
 )
 
 var (
