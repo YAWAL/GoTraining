@@ -32,7 +32,7 @@ func main() {
 	bot.Handle("yo", "YO!")
 	bot.Handle("hi", "hi!")
 
-	//bot.HandleFunc("/timer {seconds}", timerHandler)
+	bot.HandleFunc("/timer {seconds}", timerHandler)
 	bot.ListenAndServe()
 
 }
