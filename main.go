@@ -27,10 +27,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	//bot.Handle("/answer", "42")
+	bot.Handle("/answer", "42")
 
 	bot.Handle("yo", "YO!")
-
+	bot.Handle("hi", "hi!")
 
 	//bot.HandleFunc("/timer {seconds}", timerHandler)
 	bot.ListenAndServe()
