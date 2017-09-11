@@ -22,6 +22,30 @@ func timerHandler(m *tbot.Message) {
         m.Reply("Time out!")
 }
 
+func PhotoHandler(message *tbot.Message) {
+	message.ReplyPhoto("./telbot/pics/photo.jpeg", "it's me")
+}
+
+func KeyboardHandler(message *tbot.Message) {
+	buttons := [][]string{
+		{"This", "Is", "A"},
+		{"Way"},
+	}
+	message.ReplyKeyboard("Buttons example", buttons)
+}
+
+func HiHandler(message *tbot.Message) {
+	// Handler can reply with several messages
+	message.Replyf("Hello, %s!", message.From)
+	time.Sleep(1 * time.Second)
+	message.Reply("What's up?")
+}
+
+func EchoHandler(message *tbot.Message) {
+	message.Reply(message.Text())
+}
+
+
 func main() {
 	bot, err := tbot.NewServer(os.Getenv("TELEGRAM_TOKEN"))
 	if err != nil {
@@ -31,8 +55,16 @@ func main() {
 
 	bot.Handle("yo", "YO!")
 	bot.Handle("hi", "hi!")
+	bot.HandleFunc("/hi", HiHandler)
+
 
 	bot.HandleFunc("/timer {seconds}", timerHandler)
+	bot.HandleFunc("/photo", PhotoHandler)
+	bot.HandleFunc("/keyboard", KeyboardHandler)
+
+	// Set default handler if you want to process unmatched input
+	bot.HandleDefault(EchoHandler)
+
 	bot.ListenAndServe()
 
 }
