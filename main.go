@@ -40,7 +40,7 @@ func HiHandler(message *tbot.Message) {
 	message.Replyf("Hello, %s!", message.From)
 	userName := message.From
 	time.Sleep(1 * time.Second)
-	fmt.Printf(userName)
+	fmt.Println(userName)
 	message.Reply("What's up?")
 }
 
