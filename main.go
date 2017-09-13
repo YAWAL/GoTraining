@@ -6,6 +6,7 @@ import (
 	"github.com/yanzay/tbot"
 	"strconv"
 	"time"
+	"fmt"
 )
 
 func timerHandler(m *tbot.Message) {
@@ -37,7 +38,9 @@ func KeyboardHandler(message *tbot.Message) {
 func HiHandler(message *tbot.Message) {
 	// Handler can reply with several messages
 	message.Replyf("Hello, %s!", message.From)
+	userName := message.From
 	time.Sleep(1 * time.Second)
+	fmt.Printf(userName)
 	message.Reply("What's up?")
 }
 
