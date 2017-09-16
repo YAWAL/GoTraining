@@ -27,8 +27,8 @@ func PhotoHandler(message *tbot.Message) {
 
 func KeyboardHandler(message *tbot.Message) {
 	buttons := [][]string{
-		{"This", "Is", "A"},
-		{"Way"},
+		{"кнопка", "і", "ю"},
+		{"є"},
 	}
 	message.ReplyKeyboard("Buttons example", buttons)
 }
