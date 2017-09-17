@@ -24,8 +24,4 @@ func main() {
 
 	s, err = conn.Cmd("GET", "stringKey").Str()
 	fmt.Println("stringKey:", s)
-
-
-
-
 }
